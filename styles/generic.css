@@ -1,0 +1,352 @@
+/* █████████████████ */
+/* █ GENERIC SETUP █ */
+/* █████████████████ */
+
+/* FONTFACES */
+@font-face {
+  font-family: 'raleway';
+  src: url(../fonts/raleway/raleway.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: 'raleway-italic';
+  src: url(../fonts/raleway/raleway_italic.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: 'orbitron';
+  src: url(../fonts/orbitron/Orbitron-VariableFont_wght.ttf) format("truetype");
+}
+
+
+
+
+
+/* █████████████████████ */
+/* █ GENERIC VARIABLES █ */
+/* █████████████████████ */
+
+:root {
+  /* FONTS */
+  --font_1: 'raleway', sans-serif;
+  --font_2: 'orbitron', sans-serif;
+
+
+
+  /* COLORS PALETTES */
+  /*
+    From 500, darker increases hue by 2 and saturation with 1,
+    Lighter decreases hue by 2 and increases saturation by 1
+  */
+  --colors_primary_050: hsl(228, 19%, 5%);
+  --colors_primary_100: hsl(226, 18%, 10%);
+  --colors_primary_150: hsl(224, 17%, 15%);
+  --colors_primary_200: hsl(222, 16%, 20%);
+  --colors_primary_250: hsl(220, 15%, 25%);
+  --colors_primary_300: hsl(218, 14%, 30%);
+  --colors_primary_350: hsl(216, 13%, 35%);
+  --colors_primary_400: hsl(214, 12%, 40%);
+  --colors_primary_450: hsl(212, 11%, 45%);
+  --colors_primary_500: hsl(210, 10%, 50%);
+  --colors_primary_550: hsl(208, 9%, 55%);
+  --colors_primary_600: hsl(206, 8%, 60%);
+  --colors_primary_650: hsl(204, 7%, 65%);
+  --colors_primary_700: hsl(202, 6%, 70%);
+  --colors_primary_750: hsl(200, 5%, 75%);
+  --colors_primary_800: hsl(198, 4%, 80%);
+  --colors_primary_850: hsl(196, 3%, 85%);
+  --colors_primary_900: hsl(194, 2%, 90%);
+  --colors_primary_950: hsl(192, 1%, 95%);
+
+  /*
+    From 500, darker increases hue by 2 and saturation with 2,
+    Lighter decreases hue by 2 and increases saturation by 2
+  */
+  --colors_secondary_050: hsl(218, 48%, 5%);
+  --colors_secondary_100: hsl(216, 46%, 10%);
+  --colors_secondary_150: hsl(214, 44%, 15%);
+  --colors_secondary_200: hsl(212, 42%, 20%);
+  --colors_secondary_250: hsl(210, 40%, 25%);
+  --colors_secondary_300: hsl(208, 38%, 30%);
+  --colors_secondary_350: hsl(206, 36%, 35%);
+  --colors_secondary_400: hsl(204, 32%, 40%);
+  --colors_secondary_450: hsl(202, 32%, 45%);
+  --colors_secondary_500: hsl(200, 30%, 50%);
+  --colors_secondary_550: hsl(198, 32%, 55%);
+  --colors_secondary_600: hsl(196, 34%, 60%);
+  --colors_secondary_650: hsl(194, 36%, 65%);
+  --colors_secondary_700: hsl(192, 38%, 70%);
+  --colors_secondary_750: hsl(190, 40%, 75%);
+  --colors_secondary_800: hsl(188, 42%, 80%);
+  --colors_secondary_850: hsl(186, 44%, 85%);
+  --colors_secondary_900: hsl(184, 46%, 90%);
+  --colors_secondary_950: hsl(182, 48%, 95%);
+
+  /*
+    From 500, darker decreases hue by 2 and saturation with 2,
+    Lighter increases hue by 2 and increases saturation by 2
+  */
+  --colors_tertiary_050: hsl(218, 98%, 5%);
+  --colors_tertiary_100: hsl(216, 96%, 10%);
+  --colors_tertiary_150: hsl(214, 94%, 15%);
+  --colors_tertiary_200: hsl(212, 92%, 20%);
+  --colors_tertiary_250: hsl(210, 90%, 25%);
+  --colors_tertiary_300: hsl(208, 88%, 30%);
+  --colors_tertiary_350: hsl(206, 86%, 35%);
+  --colors_tertiary_400: hsl(204, 84%, 40%);
+  --colors_tertiary_450: hsl(202, 82%, 45%);
+  --colors_tertiary_500: hsl(200, 80%, 50%);
+  --colors_tertiary_550: hsl(198, 82%, 55%);
+  --colors_tertiary_600: hsl(196, 84%, 60%);
+  --colors_tertiary_650: hsl(194, 86%, 65%);
+  --colors_tertiary_700: hsl(192, 88%, 70%);
+  --colors_tertiary_750: hsl(190, 90%, 75%);
+  --colors_tertiary_800: hsl(188, 92%, 80%);
+  --colors_tertiary_850: hsl(186, 94%, 85%);
+  --colors_tertiary_900: hsl(184, 96%, 90%);
+  --colors_tertiary_950: hsl(182, 98%, 95%);
+
+  /*
+    From 500, darker decreases hue by 2 and saturation with 2,
+    Lighter increases hue by 2 and increases saturation by 2
+  */
+  --colors_glass_opacity: 70%;
+  --colors_glass_050: hsla(218, 98%, 5%, var(--colors_glass_opacity));
+  --colors_glass_100: hsla(216, 96%, 10%, var(--colors_glass_opacity));
+  --colors_glass_150: hsla(214, 94%, 15%, var(--colors_glass_opacity));
+  --colors_glass_200: hsla(212, 92%, 20%, var(--colors_glass_opacity));
+  --colors_glass_250: hsla(210, 90%, 25%, var(--colors_glass_opacity));
+  --colors_glass_300: hsla(208, 88%, 30%, var(--colors_glass_opacity));
+  --colors_glass_350: hsla(206, 86%, 35%, var(--colors_glass_opacity));
+  --colors_glass_400: hsla(204, 84%, 40%, var(--colors_glass_opacity));
+  --colors_glass_450: hsla(202, 82%, 45%, var(--colors_glass_opacity));
+  --colors_glass_500: hsla(200, 80%, 50%, var(--colors_glass_opacity));
+  --colors_glass_550: hsla(198, 82%, 55%, var(--colors_glass_opacity));
+  --colors_glass_600: hsla(196, 84%, 60%, var(--colors_glass_opacity));
+  --colors_glass_650: hsla(194, 86%, 65%, var(--colors_glass_opacity));
+  --colors_glass_700: hsla(192, 88%, 70%, var(--colors_glass_opacity));
+  --colors_glass_750: hsla(190, 90%, 75%, var(--colors_glass_opacity));
+  --colors_glass_800: hsla(188, 92%, 80%, var(--colors_glass_opacity));
+  --colors_glass_850: hsla(186, 94%, 85%, var(--colors_glass_opacity));
+  --colors_glass_900: hsla(184, 96%, 90%, var(--colors_glass_opacity));
+  --colors_glass_950: hsla(182, 98%, 95%, var(--colors_glass_opacity));
+
+  --colors_shadow_100: hsla(0, 0%, 0%, 10%);
+  --colors_shadow_300: hsla(0, 0%, 0%, 30%);
+  --colors_shadow_500: hsla(0, 0%, 0%, 50%);
+  --colors_shadow_700: hsla(0, 0%, 0%, 70%);
+
+
+
+  /* TRANSITIONS */
+  --transition_delay_1: 0.25s;
+  --transition_delay_2: 0.5s;
+  --transition_delay_3: 0.75s;
+  --transition_delay_4: 1s;
+  --transition_delay_5: 1.5s;
+  --transition_delay_6: 2s;
+  --transition_delay_7: 3s;
+  --transition_delay_8: 5s;
+  --transition_delay_9: 7.5s;
+  --transition_delay_10: 10s;
+
+
+
+  /* BLURFRAMES */
+  --blur_1: 4px;
+}
+
+
+
+
+
+
+/* ████████████████████████ */
+/* █ GENERIC CALCULATIONS █ */
+/* ████████████████████████ */
+
+:root {
+  /* GRADIENTS */
+  --gradients_primary_1: linear-gradient(-5deg,
+      var(--colors_primary_800),
+      var(--colors_primary_900));
+
+  --gradients_glass_1: linear-gradient(-45deg,
+      var(--colors_glass_400),
+      var(--colors_glass_600));
+  ;
+
+
+
+  /* GRADIENT FALLBACK COLORS */
+  --gradients_glass_primary_1_fallback: var(--colors_primary_850);
+}
+
+
+
+
+
+/* ████████████████████ */
+/* █ GENERIC RULESETS █ */
+/* ████████████████████ */
+
+/* GENERIC HTML */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+
+
+/* HEADER MODULE */
+
+#MDL_header div{
+  position: relative;
+  background-image: var(--gradients_primary_1);
+  filter: drop-shadow(0 4px 2px var(--colors_shadow_300));
+  z-index: 2;
+}
+
+#MDL_header a {
+  float: left;
+  transition: transform var(--transition_delay_3);
+}
+
+#MDL_header a:hover {
+  transform: rotate(360deg);
+}
+
+#MDL_header h1 {
+  display: inline-block;
+  font-family: var(--font_2);
+  font-weight: 400;
+  color: var(--colors_tertiary_250);
+}
+
+#MDL_header button {
+  background-image: url(../images/icons/menu_lightgray.svg);
+  background-color: transparent;
+  float: right;
+}
+
+#MDL_header button:hover {
+  cursor: pointer;
+  background-image: url(../images/icons/menu_darkgray.svg);
+}
+
+#MDL_header #mobileMenuButton {
+  visibility: hidden;
+}
+
+#MDL_header_topNavBar {
+  visibility: hidden; 
+}
+
+#MDL_header #MDL_header_mobileNavMenu {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--colors_primary_900);
+  z-index: 3;
+}
+
+#MDL_header #MDL_header_mobileNavMenu.open {
+  visibility: visible;
+}
+
+
+
+
+
+/* ███████████████████████████ */
+/* █ RESPONSIVE (TINY) SETUP █ */
+/* ███████████████████████████ */
+
+@media only screen and (max-width: 6000px) {
+  /* REMEMBER 600px */
+
+
+
+
+
+  /* ███████████████████████████████ */
+  /* █ RESPONSIVE (TINY) VARIABLES █ */
+  /* ███████████████████████████████ */
+
+  :root {
+    /* HEADER MODULE */
+    /* How tall the header is at least */
+    --MDL_header_height: 64px;
+
+    /* Internal padding between items inside the header */
+    --MDL_header_padding: 8px;
+
+    /* How large the titles font is
+      tfs = Title Font Size */
+    --MDL_header_tfs: 24px;
+  }
+
+
+
+
+
+  /* ██████████████████████████████████ */
+  /* █ RESPONSIVE (TINY) CALCULATIONS █ */
+  /* ██████████████████████████████████ */
+
+  :root {
+    /* HEADER MODULE */
+    /* How tall the content of the header is
+      hmp = Height Minus Padding */
+    --MDL_header_hmp: calc(var(--MDL_header_height) - 2 * var(--MDL_header_padding));
+  }
+
+
+
+
+
+  /* ██████████████████████████████ */
+  /* █ RESPONSIVE (TINY) RULESETS █ */
+  /* ██████████████████████████████ */
+
+  /* HEADER MODULE */
+  #MDL_header a {
+    height: var(--MDL_header_hmp);
+    min-height: var(--MDL_header_hmp);
+    width: var(--MDL_header_hmp);
+    margin: var(--MDL_header_padding);
+  }
+
+  #MDL_header img {
+    height: var(--MDL_header_hmp);
+    min-height: var(--MDL_header_hmp);
+  }
+
+  #MDL_header h1 {
+    height: var(--MDL_header_hmp);
+    min-height: var(--MDL_header_hmp);
+    margin: var(--MDL_header_padding);
+    line-height: var(--MDL_header_hmp);
+    font-size: var(--MDL_header_tfs);
+  }
+
+  #MDL_header button {
+    height: var(--MDL_header_hmp);
+    min-height: var(--MDL_header_hmp);
+    width: var(--MDL_header_hmp);
+    margin: var(--MDL_header_padding);
+  }
+
+  #MDL_header #topNavBar {
+    visibility: hidden;
+  }
+
+  #MDL_header #mobileMenuButton {
+    visibility: visible;
+  }
+}

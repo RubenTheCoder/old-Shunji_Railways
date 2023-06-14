@@ -1,0 +1,8 @@
+1. Insert the start into the queue
+2. Repeat 2-7 until end has been found or no more neighbours
+3. Get the item with the shortest distance from the queue
+4. Check if the item is the end point
+5. If so, break the loop and return the path it generated
+6. Else add the point to the visited list, and add its
+  unvisited and reachable neighbours
+7. Repeat from step 2
