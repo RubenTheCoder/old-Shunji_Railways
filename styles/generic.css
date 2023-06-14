@@ -179,7 +179,7 @@
 
 
   /* GRADIENT FALLBACK COLORS */
-  --gradients_glass_primary_1_fallback: var(--colors_primary_850);
+  --gradients_primary_1_fallback: var(--colors_primary_850);
 }
 
 
@@ -204,6 +204,7 @@
 
 #MDL_header div{
   position: relative;
+  background-color: var(--gradients_primary_1_fallback);
   background-image: var(--gradients_primary_1);
   filter: drop-shadow(0 4px 2px var(--colors_shadow_300));
   z-index: 2;
