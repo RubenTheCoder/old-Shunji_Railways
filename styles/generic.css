@@ -139,16 +139,16 @@
 
 
   /* TRANSITIONS */
-  --transition_delay_1: 0.25s;
-  --transition_delay_2: 0.5s;
-  --transition_delay_3: 0.75s;
-  --transition_delay_4: 1s;
-  --transition_delay_5: 1.5s;
-  --transition_delay_6: 2s;
-  --transition_delay_7: 3s;
-  --transition_delay_8: 5s;
-  --transition_delay_9: 7.5s;
-  --transition_delay_10: 10s;
+  --transition_duration_1: 0.25s;
+  --transition_duration_2: 0.5s;
+  --transition_duration_3: 0.75s;
+  --transition_duration_4: 1s;
+  --transition_duration_5: 1.5s;
+  --transition_duration_6: 2s;
+  --transition_duration_7: 3s;
+  --transition_duration_8: 5s;
+  --transition_duration_9: 7.5s;
+  --transition_duration_10: 10s;
 
 
 
@@ -202,7 +202,11 @@
 
 /* HEADER MODULE */
 
-#MDL_hdr div{
+#MDL_hdr {
+  position: relative;
+}
+
+#MDL_hdr_titleBar {
   position: relative;
   background-color: var(--gradients_primary_1_fallback);
   background-image: var(--gradients_primary_1);
@@ -210,53 +214,48 @@
   z-index: 2;
 }
 
-#MDL_hdr a {
+#MDL_hdr_titleBar>a {
   float: left;
-  transition: transform var(--transition_delay_3);
+  transition: transform var(--transition_duration_3);
 }
 
-#MDL_hdr a:hover {
+#MDL_hdr_titleBar>a:hover {
   transform: rotate(360deg);
 }
 
-#MDL_hdr h1 {
+#MDL_hdr_titleBar>h1 {
   display: inline-block;
   font-family: var(--font_2);
   font-weight: 400;
   color: var(--colors_tertiary_250);
 }
 
-#MDL_hdr button {
+#MDL_hdr_mobileMenuButton {
+  visibility: hidden;
   background-image: url(../images/icons/menu_lightgray.svg);
   background-color: transparent;
   float: right;
 }
 
-#MDL_hdr button:hover {
+#MDL_hdr_mobileMenuButton:hover {
   cursor: pointer;
   background-image: url(../images/icons/menu_darkgray.svg);
 }
 
-#MDL_hdr #mobileMenuButton {
-  visibility: hidden;
-}
-
 #MDL_hdr_topNavBar {
-  visibility: hidden; 
-}
-
-#MDL_hdr #MDL_hdr_mobileNavMenu {
   visibility: hidden;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  background-color: var(--colors_primary_900);
-  z-index: 3;
 }
 
-#MDL_hdr #MDL_hdr_mobileNavMenu.open {
+#MDL_hdr_mobileNavMenu {
+  position: absolute;
+  visibility: hidden;
+  top: 100%; /* Places it at bottom of header*/
+  left: 0;
+  width: 100vw;
+  background-color: var(--colors_primary_800);
+}
+
+#MDL_hdr_mobileNavMenu.open {
   visibility: visible;
 }
 
@@ -316,19 +315,19 @@
   /* ██████████████████████████████ */
 
   /* HEADER MODULE (MDL_HDR) */
-  #MDL_hdr a {
+  #MDL_hdr_titleBar>a {
     height: var(--MDL_hdr_hmp);
     min-height: var(--MDL_hdr_hmp);
     width: var(--MDL_hdr_hmp);
     margin: var(--MDL_hdr_padding);
   }
 
-  #MDL_hdr img {
+  #MDL_hdr_titleBar>a>img {
     height: var(--MDL_hdr_hmp);
     min-height: var(--MDL_hdr_hmp);
   }
 
-  #MDL_hdr h1 {
+  #MDL_hdr_titleBar>h1 {
     height: var(--MDL_hdr_hmp);
     min-height: var(--MDL_hdr_hmp);
     margin: var(--MDL_hdr_padding);
@@ -336,18 +335,18 @@
     font-size: var(--MDL_hdr_tfs);
   }
 
-  #MDL_hdr button {
+  #MDL_hdr_mobileMenuButton {
     height: var(--MDL_hdr_hmp);
     min-height: var(--MDL_hdr_hmp);
     width: var(--MDL_hdr_hmp);
     margin: var(--MDL_hdr_padding);
   }
 
-  #MDL_hdr #topNavBar {
+  #MDL_hdr_topNavBar {
     visibility: hidden;
   }
 
-  #MDL_hdr #mobileMenuButton {
+  #MDL_hdr_mobileMenuButton {
     visibility: visible;
   }
 }

@@ -48,6 +48,21 @@
 
 
 
+<!-- ███████████████ -->
+<!-- █ SERVER CODE █ -->
+<!-- ███████████████ -->
+
+<?php
+$webdataFile = fopen("databases/webdata.json", "r") or die("Unable to open file!");
+$webdataRawData = fread($webdataFile, filesize("databases/webdata.json"));
+$webdata = json_decode($webdataRawData, true);
+fclose($webdataFile);
+?>
+
+
+
+
+
 <body>
 
   <!-- ███████████████████████████ -->
@@ -56,7 +71,7 @@
 
   <header id="MDL_hdr">
     <!-- TITLEBAR -->
-    <div>
+    <div id="MDL_hdr_titleBar">
       <a href="index.php" title="Go to homepage">
         <img src="images/logos/logo_small.png">
       </a>
@@ -73,8 +88,23 @@
 
     <!-- MOBILE NAVIGATION MENU -->
     <nav id="MDL_hdr_mobileNavMenu">
-      <div></div>
+      <ul>
+        <?php
+        // Creates links for each item in the webdata list of navigation categories
+        foreach ($webdata["MDL_HDR_mobileNavCategories"] as $key => $value): ?>
+          <li>
+            <img src=images/icons/<?= $value["iconFileName"] ?> />
+            <button value=<?= $key ?>>
+              <?= $value["displayName"] ?>
+            </button>
+          </li>
+        <?php endforeach; ?>
+      </ul>
+
     </nav>
+
+
+
   </header>
 
 

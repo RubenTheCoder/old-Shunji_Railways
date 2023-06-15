@@ -1,0 +1,24 @@
+{
+  "MDL_HDR_mobileNavCategories": {
+    "travel_info": {
+      "displayName": "Travel info",
+      "iconFileName": "train_darkblue.svg"
+    },
+    "trip_ideas": {
+      "displayName": "Trip Ideas",
+      "iconFileName": "explore_darkblue.svg"
+    },
+    "products": {
+      "displayName": "Products",
+      "iconFileName": "storefront_darkblue.svg"
+    },
+    "safety": {
+      "displayName": "Safety",
+      "iconFileName": "safety_darkblue.svg"
+    },
+    "support": {
+      "displayName": "Support",
+      "iconFileName": "help_darkblue.svg"
+    }
+  }
+}
