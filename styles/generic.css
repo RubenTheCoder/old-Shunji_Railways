@@ -160,7 +160,6 @@
 
 
 
-
 /* ████████████████████████ */
 /* █ GENERIC CALCULATIONS █ */
 /* ████████████████████████ */
@@ -186,6 +185,55 @@
 
 
 
+/* ██████████████████████████████ */
+/* █ RESPONSIVE (TINY) SETTINGS █ */
+/* ██████████████████████████████ */
+
+/* VARIABLES */
+
+@media only screen and (max-width: 6000px) {
+  /* REMEMBER 600px */
+
+  :root {
+    /* HEADER MODULE (MDL_HDR) */
+    --MDL_HDR_height: 64px;
+    --MDL_HDR_padding: 8px;
+    /* tsp = Text Left Padding */
+    --MDL_HDR_tsp: 4px;
+    /* tfs = Title Font Size */
+    --MDL_HDR_tfs: 24px;
+
+    /* MOBILE NAVIGATION MENU (MDL_HDR_MNVM) */
+    --MDL_HDR_MNVM_height: 48px;
+    --MDL_HDR_MNVM_padding: 4px;
+    /* tsp = Text Left Padding */
+    --MDL_HDR_MNVM_tsp: 4px;
+    /* tfs = Title Font Size */
+    --MDL_HDR_MNVM_tfs: 20px;
+
+
+
+    /* CALCULATIONS */
+
+    /* HEADER MODULE (MDR_HDR) */
+    /* hmp = Height Minus Padding */
+    --MDL_HDR_hmp: calc(var(--MDL_HDR_height) - 2 * var(--MDL_HDR_padding));
+
+
+
+    /* MOBILE NAVIGATION MENU (MDL_HDR_MNVM) */
+    /* hmp = Height Minus Padding */
+    --MDL_HDR_MNVM_hmp: calc(var(--MDL_HDR_MNVM_height) - 2 * var(--MDL_HDR_MNVM_padding));
+  }
+
+
+  /* RULESETS */
+}
+
+
+
+
+
 /* ████████████████████ */
 /* █ GENERIC RULESETS █ */
 /* ████████████████████ */
@@ -193,160 +241,129 @@
 /* GENERIC HTML */
 * {
   box-sizing: border-box;
+
   margin: 0;
   padding: 0;
+  
   border: none;
 }
 
 
 
-/* HEADER MODULE */
+/* HEADER MODULE (MDL_HDR) */
 
-#MDL_hdr {
+#MDL_HDR {
   position: relative;
 }
 
-#MDL_hdr_titleBar {
+#MDL_HDR_titleBar {
   position: relative;
+
   background-color: var(--gradients_primary_1_fallback);
   background-image: var(--gradients_primary_1);
+
   filter: drop-shadow(0 4px 2px var(--colors_shadow_300));
+
   z-index: 2;
 }
 
-#MDL_hdr_titleBar>a {
+#MDL_HDR_titleBar>a {
+  height: var(--MDL_HDR_hmp);
+  min-height: var(--MDL_HDR_hmp);
+  width: var(--MDL_HDR_hmp);
+  margin: var(--MDL_HDR_padding);
   float: left;
+
   transition: transform var(--transition_duration_3);
 }
 
-#MDL_hdr_titleBar>a:hover {
+#MDL_HDR_titleBar>a:hover {
   transform: rotate(360deg);
 }
 
-#MDL_hdr_titleBar>h1 {
+#MDL_HDR_titleBar>a>img {
+  height: var(--MDL_HDR_hmp);
+  min-height: var(--MDL_HDR_hmp);
+}
+
+#MDL_HDR_titleBar>h1 {
   display: inline-block;
+
+  height: var(--MDL_HDR_hmp);
+  min-height: var(--MDL_HDR_hmp);
+  margin: var(--MDL_HDR_padding);
+  padding-left: var(--MDL_HDR_tsp);
+
+  line-height: var(--MDL_HDR_hmp);
+  font-size: var(--MDL_HDR_tfs);
   font-family: var(--font_2);
   font-weight: 400;
+  
   color: var(--colors_tertiary_250);
 }
 
-#MDL_hdr_mobileMenuButton {
-  visibility: hidden;
-  background-image: url(../images/icons/menu_lightgray.svg);
-  background-color: transparent;
+#MDL_HDR_MMB {
+  height: var(--MDL_HDR_hmp);
+  min-height: var(--MDL_HDR_hmp);
+  width: var(--MDL_HDR_hmp);
+  margin: var(--MDL_HDR_padding);
   float: right;
+
+  background-color: transparent;
+  background-image: url(../images/icons/menu_lightgray.svg);
 }
 
-#MDL_hdr_mobileMenuButton:hover {
-  cursor: pointer;
+#MDL_HDR_MMB:hover {
   background-image: url(../images/icons/menu_darkgray.svg);
+
+  cursor: pointer;
 }
 
-#MDL_hdr_topNavBar {
+
+
+/* MOBILE NAVIGATION MENU (MDL_HDR_MNVM) */
+
+#MDL_HDR_MNVM {
   visibility: hidden;
-}
 
-#MDL_hdr_mobileNavMenu {
   position: absolute;
-  visibility: hidden;
-  top: 100%; /* Places it at bottom of header*/
-  left: 0;
   width: 100vw;
+  /* Places it at bottom of header*/
+  top: 100%;
+  left: 0;
+
   background-color: var(--colors_primary_800);
+
+  filter: drop-shadow(0 4px 2px var(--colors_shadow_300));
 }
 
-#MDL_hdr_mobileNavMenu.open {
+#MDL_HDR_MNVM.open {
   visibility: visible;
 }
 
+#MDL_HDR_MNVM>ul>li {
+  display: flex;
 
+  min-height: var(--MDL_HDR_MNVM_height);
+  padding: var(--MDL_HDR_MNVM_padding);
 
+  line-height: var(--MDL_HDR_MNVM_height);
+}
 
+#MDL_HDR_MNVM>ul>li>img {
+  height: var(--MDL_HDR_MNVM_hmp);
+}
 
-/* ███████████████████████████ */
-/* █ RESPONSIVE (TINY) SETUP █ */
-/* ███████████████████████████ */
+#MDL_HDR_MNVM>ul>li>button {
+  display: inline-block;
 
-@media only screen and (max-width: 6000px) {
-  /* REMEMBER 600px */
+  min-height: var(--MDL_HDR_MNVM_hmp);
+  padding-left: var(--MDL_HDR_tsp);
 
+  background-color: transparent;
+  color: var(--colors_tertiary_250);
 
-
-
-
-  /* ███████████████████████████████ */
-  /* █ RESPONSIVE (TINY) VARIABLES █ */
-  /* ███████████████████████████████ */
-
-  :root {
-    /* HEADER MODULE (MDL_HDR) */
-    /* How tall the header is at least */
-    --MDL_hdr_height: 64px;
-
-    /* Internal padding between items inside the header */
-    --MDL_hdr_padding: 8px;
-
-    /* How large the titles font is
-      tfs = Title Font Size */
-    --MDL_hdr_tfs: 24px;
-  }
-
-
-
-
-
-  /* ██████████████████████████████████ */
-  /* █ RESPONSIVE (TINY) CALCULATIONS █ */
-  /* ██████████████████████████████████ */
-
-  :root {
-    /* HEADER MODULE (MDR_HDR) */
-    /* How tall the content of the header is
-      hmp = Height Minus Padding */
-    --MDL_hdr_hmp: calc(var(--MDL_hdr_height) - 2 * var(--MDL_hdr_padding));
-  }
-
-
-
-
-
-  /* ██████████████████████████████ */
-  /* █ RESPONSIVE (TINY) RULESETS █ */
-  /* ██████████████████████████████ */
-
-  /* HEADER MODULE (MDL_HDR) */
-  #MDL_hdr_titleBar>a {
-    height: var(--MDL_hdr_hmp);
-    min-height: var(--MDL_hdr_hmp);
-    width: var(--MDL_hdr_hmp);
-    margin: var(--MDL_hdr_padding);
-  }
-
-  #MDL_hdr_titleBar>a>img {
-    height: var(--MDL_hdr_hmp);
-    min-height: var(--MDL_hdr_hmp);
-  }
-
-  #MDL_hdr_titleBar>h1 {
-    height: var(--MDL_hdr_hmp);
-    min-height: var(--MDL_hdr_hmp);
-    margin: var(--MDL_hdr_padding);
-    line-height: var(--MDL_hdr_hmp);
-    font-size: var(--MDL_hdr_tfs);
-  }
-
-  #MDL_hdr_mobileMenuButton {
-    height: var(--MDL_hdr_hmp);
-    min-height: var(--MDL_hdr_hmp);
-    width: var(--MDL_hdr_hmp);
-    margin: var(--MDL_hdr_padding);
-  }
-
-  #MDL_hdr_topNavBar {
-    visibility: hidden;
-  }
-
-  #MDL_hdr_mobileMenuButton {
-    visibility: visible;
-  }
+  font-family: var(--font_1);
+  font-size: var(--MDL_HDR_MNVM_tfs);
+  line-height: var(--MDL_HDR_MNVM_hmp);
 }

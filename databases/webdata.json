@@ -1,5 +1,5 @@
 {
-  "MDL_HDR_mobileNavCategories": {
+  "MDL_HDR_NVC": {
     "travel_info": {
       "displayName": "Travel info",
       "iconFileName": "train_darkblue.svg"

@@ -69,29 +69,29 @@ fclose($webdataFile);
   <!-- █ HEADER MODULE (MDL_HDR) █ -->
   <!-- ███████████████████████████ -->
 
-  <header id="MDL_hdr">
+  <header id="MDL_HDR">
     <!-- TITLEBAR -->
-    <div id="MDL_hdr_titleBar">
+    <div id="MDL_HDR_titleBar">
       <a href="index.php" title="Go to homepage">
         <img src="images/logos/logo_small.png">
       </a>
-      <button id="MDL_hdr_mobileMenuButton"
+      <button id="MDL_HDR_MMB"
         title="Open navigation menu">
       </button>
       <h1>Shunji Railways</h1>
     </div>
 
     <!-- TOP NAVIGATION BAR -->
-    <nav id="MDL_hdr_topNavBar">
+    <nav id="MDL_HDR_topNavBar">
 
     </nav>
 
-    <!-- MOBILE NAVIGATION MENU -->
-    <nav id="MDL_hdr_mobileNavMenu">
+    <!-- MOBILE NAVIGATION MENU (MNVM) -->
+    <nav id="MDL_HDR_MNVM">
       <ul>
         <?php
         // Creates links for each item in the webdata list of navigation categories
-        foreach ($webdata["MDL_HDR_mobileNavCategories"] as $key => $value): ?>
+        foreach ($webdata["MDL_HDR_NVC"] as $key => $value): ?>
           <li>
             <img src=images/icons/<?= $value["iconFileName"] ?> />
             <button value=<?= $key ?>>
