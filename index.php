@@ -49,31 +49,31 @@
 
 
 <body>
-  <!-- █████████████████ -->
-  <!-- █ HEADER MODULE █ -->
-  <!-- █████████████████ -->
-  <header id="MDL_header">
+
+  <!-- ███████████████████████████ -->
+  <!-- █ HEADER MODULE (MDL_HDR) █ -->
+  <!-- ███████████████████████████ -->
+
+  <header id="MDL_hdr">
+    <!-- TITLEBAR -->
     <div>
       <a href="index.php" title="Go to homepage">
         <img src="images/logos/logo_small.png">
       </a>
-      <button id="MDL_header_mobileMenuButton"
+      <button id="MDL_hdr_mobileMenuButton"
         title="Open navigation menu">
       </button>
       <h1>Shunji Railways</h1>
     </div>
-    <nav id="MDL_header_topNavBar">
+
+    <!-- TOP NAVIGATION BAR -->
+    <nav id="MDL_hdr_topNavBar">
 
     </nav>
 
-
-
-    <!-- ███████████████████ -->
-    <!-- █ MOBILE NAV MENU █ -->
-    <!-- ███████████████████ -->
-
-    <nav id="MDL_header_mobileNavMenu">
-      This menu works (for now). Refresh to close
+    <!-- MOBILE NAVIGATION MENU -->
+    <nav id="MDL_hdr_mobileNavMenu">
+      <div></div>
     </nav>
   </header>
 

@@ -1,33 +1,42 @@
+// ██████████████
+// █ REFERENCES █
+// ██████████████
+
+/* HEADER MODULE (MDL_HDR) */
+MDL_hdr_mobileMenuButton = document.getElementById("MDL_hdr_mobileMenuButton");
+MDL_hdr_mobileNavMenu = document.getElementById("MDL_hdr_mobileNavMenu");
+
+
+
 // █████████████████████
 // █ PREDEFINED VALUES █
 // █████████████████████
 
-  /* HEADER MODULE */
-  MDL_header_mobileMenuButton = document.getElementById("MDL_header_mobileMenuButton");
-  MDL_header_mobileNavMenu = document.getElementById("MDL_header_mobileNavMenu");
-  MDL_header_isMobileNavMenuOpen = false;
+/* HEADER MODULE (MDL_HDR) */
+MDL_hdr_isMobileNavMenuOpen = false;
 
 
 
-// █████████████████
-// █ HEADER MODULE █
-// █████████████████
+// █████████████
+// █ FUNCTIONS █
+// █████████████
 
+/* HEADER MODULE (MDL_HDR) */
 function toggleMobileNavMenu() {
-  switch (MDL_header_isMobileNavMenuOpen) {
+  switch (MDL_hdr_isMobileNavMenuOpen) {
     // Menu closed, open
     case false:
-      if (!MDL_header_mobileNavMenu.classList.contains("open")) {
-        MDL_header_mobileNavMenu.classList.add("open")
+      if (!MDL_hdr_mobileNavMenu.classList.contains("open")) {
+        MDL_hdr_mobileNavMenu.classList.add("open")
       };
-      MDL_header_isMobileNavMenuOpen = true;
+      MDL_hdr_isMobileNavMenuOpen = true;
       break;
     // Menu open, close
     case true:
-      if (MDL_header_mobileNavMenu.classList.contains("open")) {
-        MDL_header_mobileNavMenu.classList.remove("open")
+      if (MDL_hdr_mobileNavMenu.classList.contains("open")) {
+        MDL_hdr_mobileNavMenu.classList.remove("open")
       };
-      MDL_header_isMobileNavMenuOpen = false;
+      MDL_hdr_isMobileNavMenuOpen = false;
       break;
   }
 };
@@ -38,7 +47,7 @@ function toggleMobileNavMenu() {
 // █ EVENT COUPLERS █
 // ██████████████████
 
-// HEADER MODULE
-MDL_header_mobileMenuButton.addEventListener("click", toggleMobileNavMenu);
+// HEADER MODULE (MDL_HDR)
+MDL_hdr_mobileMenuButton.addEventListener("click", toggleMobileNavMenu);
 
 
