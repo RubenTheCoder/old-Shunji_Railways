@@ -1,10 +1,7 @@
-This code has special code header, to make it easier to find code.
-They are placed above important segments, like the header module
-The cubes are made of Alt-code 219
+# README
 
+Dit zou een website worden voor een zelfbedachte spoorwegmaatschappij. Je zou er dan een route kunnen plannen, info vinden en kaartjes bestellen.
 
+---
 
-SVG's need to be recolored using a color attribute within the SVG file.
-Add this snippet behind the path attribute:
-
-fill="your color"
+Gemaakt door RubenTheCoder
